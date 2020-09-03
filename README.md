@@ -1,2 +1,2 @@
 # ez-url
-My URL Shortener
+My URL Shortener with Node.js + Vue.js
