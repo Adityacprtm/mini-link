@@ -1,2 +1,5 @@
-# ez-url
-My URL Shortener with Node.js + Vue.js
+# EZ-URL
+Simple URL Shortener build with Mongodb + Express + Vuejs + Nodejs
+
+## Credit
+- Dynamic background: unsplash
