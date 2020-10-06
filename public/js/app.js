@@ -13,7 +13,7 @@ const app = new Vue({
          this.error = "";
          if (this.checkForm()) {
             var url = this.url;
-            if (!url.includes("https://") || !url.includes("http://")) {
+            if (!url.includes("https://") && !url.includes("http://")) {
                url = "http://" + this.url;
             }
             const response = await fetch("/url", {
