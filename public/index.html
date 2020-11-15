@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="">
    <head>
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,7 +15,7 @@
       <meta name="author" content="Aditya" />
 
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://ez-url.herokuapp.com/" />
+      <meta property="og:url" content="https://ezurl.adityacprtm.com/" />
       <meta property="og:title" content="EZURL Shortener | Adityacprtm" />
       <meta
          property="og:description"
@@ -27,7 +27,7 @@
       />
 
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content="https://ez-url.herokuapp.com/" />
+      <meta property="twitter:url" content="https://ezurl.adityacprtm.com/" />
       <meta property="twitter:title" content="EZURL Shortener | Adityacprtm" />
       <meta
          property="twitter:description"
@@ -40,7 +40,7 @@
 
       <title>EZURL Shortener | Adityacprtm</title>
 
-      <link rel="shortcut icon" href="https://adityacprtm.com//favicon.ico" />
+      <link rel="shortcut icon" href="https://adityacprtm.com/favicon.ico" />
       <link
          rel="apple-touch-icon"
          sizes="180x180"
@@ -66,69 +66,153 @@
       />
       <meta name="msapplication-TileColor" content="#1e73be" />
       <meta name="theme-color" content="#ffffff" />
-
-      <link rel="stylesheet" href="css/styles.css" />
+      <link rel="stylesheet" href="css/bootstrap.min.css" />
+      <link rel="stylesheet" href="css/fontawesome-all.min.css" />
+      <link
+         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="css/style.css" />
    </head>
 
    <body>
-      <header>
-         <a
-            href="https://adityacprtm.com"
-            target="_blank"
-            title="adityacprtm.com"
-         >
-            <img class="logo" src="https://i.imgur.com/r74DMfi.png" />
-         </a>
-      </header>
-      <main id="app">
-         <form class="form" v-if="formVisible" @submit.prevent="createUrl()">
-            <div v-if="error" class="error">{{error}}</div>
-            <input
-               class="input"
-               type="text"
-               v-model="url"
-               name="url"
-               id="url"
-               placeholder="enter a url"
-            />
-            <input
-               class="input"
-               type="text"
-               v-model="slug"
-               name="slug"
-               id="slug"
-               placeholder="enter a slug (optional)"
-               minlength="5"
-               maxlength="20"
-            />
-            <b class="info">{{ loc }}/{{slug}}</b>
-            <button type="submit" class="create">create</button>
-         </form>
-         <div v-if="created">
-            <p class="created">
-               Your short url is:
-               <a :href="created" target="_blank">{{created}}</a>
-            </p>
-            <a class="go-home-link" href="/">
-               <svg
-                  class="arrow"
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-               >
-                  <path
-                     d="M25.608 15.6363L25.608 11.8599L7.24473 11.8599L13.0697 6.03492L10.3914 3.35661L-9.02484e-05 13.7481L10.3914 24.1397L13.0697 21.4614L7.24473 15.6363L25.608 15.6363Z"
-                     fill="currentColor"
-                  />
-               </svg>
-               go home
-            </a>
-         </div>
-      </main>
+      <section id="app" class="fxt-template-animation fxt-template-layout30">
+         <!-- Star Animation Start Here -->
+         <canvas id="canvas"></canvas>
+         <!-- Star Animation End Here -->
+         <div class="fxt-content">
+            <div class="fxt-header">
+               <a href="https://ezurl.adityacprtm.com/" class="fxt-logo">
+                  <img src="img/ezurl.png" alt="Logo" />
+               </a>
+            </div>
 
+            <div class="fxt-form text-center">
+               <div v-if="error" class="alert alert-danger" role="alert">
+                  {{ error }}
+               </div>
+
+               <form v-if="formVisible" @submit.prevent="createUrl()">
+                  <div class="form-group">
+                     <div class="fxt-transformY-50 fxt-transition-delay-1">
+                        <input
+                           type="text"
+                           id="url"
+                           v-model="url"
+                           class="form-control input"
+                           name="url"
+                           placeholder="Enter a URL"
+                           required="required"
+                        />
+                     </div>
+                  </div>
+
+                  <div class="form-group">
+                     <div class="fxt-transformY-50 fxt-transition-delay-2">
+                        <input
+                           id="slug"
+                           type="text"
+                           v-model="slug"
+                           class="form-control input"
+                           name="slug"
+                           placeholder="Enter a Slug (optional)"
+                           minlength="5"
+                           maxlength="15"
+                        />
+                     </div>
+                  </div>
+
+                  <div class="form-group">
+                     <div
+                        class="fxt-transformY-50 fxt-transition-delay-3 display"
+                     >
+                        <p>{{ loc }}/{{ slug }}</p>
+                     </div>
+                  </div>
+
+                  <div class="form-group">
+                     <div class="fxt-transformY-50 fxt-transition-delay-4">
+                        <button type="submit" class="fxt-btn-fill btn-block">
+                           Create
+                        </button>
+                     </div>
+                  </div>
+               </form>
+
+               <div v-if="created">
+                  <p class="created">
+                     Here is your short url::
+                     <br />
+                     <a :href="created" target="_blank">{{created}}</a>
+                  </p>
+                  <div class="form-group">
+                     <div class="fxt-transformY-50 fxt-transition-delay-5">
+                        <button
+                           v-on:click="home"
+                           type="button"
+                           class="fxt-btn-fill btn-block"
+                        >
+                           Create more
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="fxt-style-line">
+               <div class="fxt-transformY-50 fxt-transition-delay-6">
+                  <h3>Follow Me!</h3>
+               </div>
+            </div>
+
+            <ul class="fxt-socials">
+               <li
+                  class="fxt-facebook fxt-transformY-50 fxt-transition-delay-7"
+               >
+                  <a
+                     href="https://www.facebook.com/adityacprtm"
+                     title="Facebook"
+                  >
+                     <i class="fab fa-facebook-f"></i>
+                  </a>
+               </li>
+               <li class="fxt-twitter fxt-transformY-50 fxt-transition-delay-8">
+                  <a href="https://www.twitter.com/adityacprtm" title="twitter">
+                     <i class="fab fa-twitter"></i>
+                  </a>
+               </li>
+               <li
+                  class="fxt-linkedin fxt-transformY-50 fxt-transition-delay-9"
+               >
+                  <a
+                     href="https://www.linkedin.com/in/adityacprtm"
+                     title="linkedin"
+                  >
+                     <i class="fab fa-linkedin-in"></i>
+                  </a>
+               </li>
+            </ul>
+            <div class="fxt-footer">
+               <div class="fxt-transformY-50 fxt-transition-delay-10">
+                  <p>
+                     <!-- Don't have an account? -->
+                     <a href="https://adityacprtm.com"> Adityacprtm.com </a>
+                  </p>
+               </div>
+            </div>
+         </div>
+      </section>
       <script src="js/vue.js"></script>
       <script src="js/app.js"></script>
+      <!-- jquery-->
+      <script src="js/jquery-3.5.0.min.js"></script>
+      <!-- Bootstrap js -->
+      <script src="js/bootstrap.min.js"></script>
+      <!-- Imagesloaded js -->
+      <script src="js/imagesloaded.pkgd.min.js"></script>
+      <!-- Star Animation js -->
+      <script src="js/star-animation.js"></script>
+      <!-- Custom Js -->
+      <script src="js/main.js"></script>
    </body>
 </html>

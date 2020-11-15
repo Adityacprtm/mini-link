@@ -47,12 +47,5 @@ const app = new Vue({
          }
          return true;
       },
-      home: function () {
-         this.formVisible = true;
-         this.created = null;
-         this.url = "";
-         this.slug = "";
-         this.error = "";
-      },
    },
 });
