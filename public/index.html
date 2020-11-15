@@ -77,9 +77,8 @@
 
    <body>
       <section id="app" class="fxt-template-animation fxt-template-layout30">
-         <!-- Star Animation Start Here -->
          <canvas id="canvas"></canvas>
-         <!-- Star Animation End Here -->
+
          <div class="fxt-content">
             <div class="fxt-header">
                <a href="https://ezurl.adityacprtm.com/" class="fxt-logo">
@@ -143,7 +142,9 @@
                   <p class="created">
                      Here is your short url::
                      <br />
-                     <a :href="created" target="_blank">{{created}}</a>
+                     <a :href="created" target="_blank" rel="noopener">
+                        {{ created }}
+                     </a>
                   </p>
                   <div class="form-group">
                      <div class="fxt-transformY-50 fxt-transition-delay-5">
@@ -172,12 +173,19 @@
                   <a
                      href="https://www.facebook.com/adityacprtm"
                      title="Facebook"
+                     target="_blank"
+                     rel="noopener"
                   >
                      <i class="fab fa-facebook-f"></i>
                   </a>
                </li>
                <li class="fxt-twitter fxt-transformY-50 fxt-transition-delay-8">
-                  <a href="https://www.twitter.com/adityacprtm" title="twitter">
+                  <a
+                     href="https://www.twitter.com/adityacprtm"
+                     title="twitter"
+                     target="_blank"
+                     rel="noopener"
+                  >
                      <i class="fab fa-twitter"></i>
                   </a>
                </li>
@@ -187,6 +195,8 @@
                   <a
                      href="https://www.linkedin.com/in/adityacprtm"
                      title="linkedin"
+                     target="_blank"
+                     rel="noopener"
                   >
                      <i class="fab fa-linkedin-in"></i>
                   </a>
@@ -195,8 +205,13 @@
             <div class="fxt-footer">
                <div class="fxt-transformY-50 fxt-transition-delay-10">
                   <p>
-                     <!-- Don't have an account? -->
-                     <a href="https://adityacprtm.com"> Adityacprtm.com </a>
+                     <a
+                        href="https://adityacprtm.com"
+                        target="_blank"
+                        rel="noopener"
+                     >
+                        Adityacprtm.com
+                     </a>
                   </p>
                </div>
             </div>
@@ -204,15 +219,10 @@
       </section>
       <script src="js/vue.js"></script>
       <script src="js/app.js"></script>
-      <!-- jquery-->
       <script src="js/jquery-3.5.0.min.js"></script>
-      <!-- Bootstrap js -->
       <script src="js/bootstrap.min.js"></script>
-      <!-- Imagesloaded js -->
       <script src="js/imagesloaded.pkgd.min.js"></script>
-      <!-- Star Animation js -->
       <script src="js/star-animation.js"></script>
-      <!-- Custom Js -->
       <script src="js/main.js"></script>
    </body>
 </html>
