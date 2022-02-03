@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/Adityacprtm/mini-link#readme",
   "dependencies": {
-    "dotenv": "^10.0.0",
+    "dotenv": "^16.0.0",
     "express": "^4.17.1",
     "express-rate-limit": "^5.4.1",
     "express-slow-down": "^1.4.0",
